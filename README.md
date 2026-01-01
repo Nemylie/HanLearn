@@ -4,8 +4,8 @@
 
 ## a) Group Members
 *   Nurul Nadhirah Binti Zakaria - 2213698
-*   Azwa Nurnisya Binti Azman - 2213700
-*   Nur Ain Binti Mohd Hisham - 2213702
+*   Azwa Nurnisya Binti Ayub - 22174118
+*   Nur Ain Binti Mohamadd Hisham - 2216894
 
 ## b) Project Title
 **HanLearn**
