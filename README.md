@@ -1,2 +1,14 @@
-# Project Proposal : HanLearn Smart Mandarin Learning App
-HanLearn is a hybrid mobile educational app designed to help beginners learn Mandarin through translation tools, vocabulary practice, quizzes, and progress tracking in a simple and interactive way.
+# Project Proposal : HanLearn 
+
+# A) Group Members
+| Name  | Matric Number |
+| ------------- | ------------- |
+| NURUL NADHIRAH BINTI ZAKARIA  | 2213698  |
+| nUR AIN BINTI MOHAMAD HISHAM  | 2216894  |
+| AZWA NURNISYA BINTI AYUB  | 22174118  |
+
+# B) Project Title
+ HanLearn : Smart Mandarin Learning App
+
+# C) Introduction
+
