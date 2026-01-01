@@ -32,16 +32,18 @@ The app also reflects IIUM core value which is KHAIR which advocates for creatin
 
 ## D) Objectives of the Proposed Mobile App
 
-Provide beginners with a simple but engaging environment for learning Mandarin.
-Allow users to practice translating between English and Mandarin, in order to strengthen language acquisition.
-Make a classified vocabulary library of vital words from daily speech, education, travel, and food.
-Provide entertaining quizzes and practice modules to assist users reinforce their knowledge while they keep track of their learning progress.
-Track learning progress with an easily understood visual representation of completed quizzes, scores, and vocabulary learnt.
+1. Provide beginners with a simple but engaging environment for learning Mandarin.
+2. Allow users to practice translating between English and Mandarin, in order to strengthen language acquisition.
+3. Make a classified vocabulary library of vital words from daily speech, education, travel, and food.
+4. Provide entertaining quizzes and practice modules to assist users reinforce their knowledge while they keep track of their learning progress.
+5. Track learning progress with an easily understood visual representation of completed quizzes, scores, and vocabulary learnt.
 
 ## E) Target Users
 
-Beginners interested in learning Mandarin: This app is designed for people who are interested in learning mandarin language. All ranges of ages can use this app due to its simple and interactive modules to help users begin their journey consistently. 
-Language learners looking for an affordable tool: HanLearn provides a cost-effective alternative to traditional Mandarin courses, focusing on essential vocabulary and conversational skills.
+1. Beginners interested in learning Mandarin:
+   This app is designed for people who are interested in learning mandarin language. All ranges of ages can use this app due to its simple and interactive modules to help users begin their journey consistently. 
+2. Language learners looking for an affordable tool:
+   HanLearn provides a cost-effective alternative to traditional Mandarin courses, focusing on essential vocabulary and conversational skills.
 
 ## F) Features and Functionalities
 
