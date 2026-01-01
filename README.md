@@ -1,6 +1,6 @@
 # HanLearn - Smart Mandarin Learning App
 
-![HanLearn Logo](assets/images/HanLearnLogo.png)
+<img src="assets/images/HanLearnLogo.png" alt="HanLearn Logo" width="200" />
 
 ## a) Group Members
 *   Nurul Nadhirah Binti Zakaria - 2213698
