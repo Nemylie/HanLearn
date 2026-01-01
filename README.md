@@ -4,7 +4,7 @@
 | Name  | Matric Number |
 | ------------- | ------------- |
 | NURUL NADHIRAH BINTI ZAKARIA  | 2213698  |
-| nUR AIN BINTI MOHAMAD HISHAM  | 2216894  |
+| NUR AIN BINTI MOHAMAD HISHAM  | 2216894  |
 | AZWA NURNISYA BINTI AYUB  | 22174118  |
 
 # B) Project Title
