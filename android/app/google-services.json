@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "37050357438",
+    "project_id": "hanlearn-37143",
+    "storage_bucket": "hanlearn-37143.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37050357438:android:63b6cc13dc5d723a5630ef",
+        "android_client_info": {
+          "package_name": "com.demureous.hanlearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABBGr7GOoShp_zDZ4jWu8cAsK5bCU6gDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
