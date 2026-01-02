@@ -54,10 +54,22 @@
 ## g) Proposed UI Mock-up
 The application features a modern, clean interface adhering to **Material Design 3** principles, utilizing a **Maroon (Primary) and White (Surface)** color scheme for a professional yet inviting aesthetic.
 
+<img src="assets/images/Homescreen.jpg" alt="Homescreen" width="200" />
+
 *   **Login Screen:** Minimalist design with a branded logo, input fields with icon prefixes, and a "Remember Me" checkbox.
+
+<img src="assets/images/Dashboard.jpg" alt="Dashboard" width="200" />
+
 *   **Home Dashboard:** A central hub featuring a "Welcome" header, a "Fun Fact" card, and a grid layout for quick navigation to Learn, Quiz, Translate, and Profile sections.
+
+<img src="assets/images/Wordbank.jpg" alt="Wordbank" width="200" />
+
 *   **Vocabulary List:** Clean card-based layout for each word, emphasizing readability of characters.
+
+<img src="assets/images/Quiz.jpg" alt="Quiz" width="200" />
+
 *   **Quiz Interface:** Focused view with the question at the top, large interactive answer buttons, and a progress bar.
+
 
 ## h) Architecture / Technical Design
 *   **Framework:** Flutter (Dart) for cross-platform mobile application development.
@@ -99,6 +111,9 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 
 ## j) Flowchart / User Flow
 1.  **Launch:** App opens. Checks `shared_preferences` for "Remember Me" or existing session.
+
+
+
 2.  **Authentication:**
     *   If not logged in: User lands on **Login Screen** -> Enter credentials -> Validated by Firebase.
     *   If new user: **Register Screen** -> Create Account -> Profile created in Firestore.
