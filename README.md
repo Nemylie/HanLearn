@@ -11,19 +11,20 @@
 **HanLearn**
 
 ## c) Introduction
-*   **Problem & Motivation:** Learning Mandarin Chinese is notoriously challenging for beginners due to its logographic writing system (Hanzi) and tonal pronunciation. Many existing learning resources are either too academic or lack engagement. There is a need for a streamlined, mobile-first solution that makes acquiring basic vocabulary and testing knowledge accessible and less intimidating.
-*   **Relevance:** As Mandarin becomes increasingly important in global business and culture, a tool that helps users bridge the language gap through daily practice, translation, and gamified quizzes is highly relevant for students, travelers, and lifelong learners.
+*   **Problem & Motivation:** Learning Mandarin Chinese is notoriously challenging for beginners due to its logographic writing system (Hanzi) and tonal pronunciation. Many existing learning resources are either too academic or lack engagement. There is a need for a streamlined, mobile-first solution that makes acquiring basic vocabulary and testing knowledge accessible and less intimidating.  
+
+*   **Relevance:** As Mandarin becomes increasingly important in global business and culture, a tool that helps users bridge the language gap through daily practice, translation, and gamified quizzes is highly relevant for students, travelers, and lifelong learners. HanLearn is developed as a cross-platform mobile application using Flutter, supporting both Android and iOS devices which is feasible for all type of users.
 
 ## d) Objectives
-1.  To develop a mobile application that simplifies Mandarin vocabulary acquisition through categorized learning.
-2.  To provide accurate English-Chinese translation tools to assist users in real-time understanding.
+1. To enable beginners to learn essential Mandarin vocabulary through structured and categorized lessons.
+2. To assist users in understanding Mandarin in real-life situations using accurate English–Chinese translation tools.
 3.  To implement an interactive quiz system that reinforces learning through active recall and immediate feedback.
 4.  To create a personalized learning experience by tracking user progress, scores, and proficiency levels.
 
 ## e) Target Users
-*   **Beginner Learners:** Individuals starting their journey with Mandarin who need structured vocabulary lists.
-*   **Students:** Language students requiring a supplementary tool for revision and practice.
-*   **Travelers:** Tourists needing quick references and translation assistance for daily interactions (food, travel, directions).
+*   **Beginner Learners:** Individuals aged 7–35 with no prior Mandarin background who prefer mobile-based, self-paced learning with simple explanations.
+*   **Students:** School or university students learning Mandarin who need a supplementary tool for revision, quizzes, and vocabulary reinforcement.
+*   **Travelers:** Tourists and casual learners who needs quick references and translation assistance for daily interactions (food, travel, directions).
 
 ## f) Features and Functionalities
 1.  **User Authentication Module:**
