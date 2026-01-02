@@ -113,6 +113,7 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 > This flowchart shows the user signup and login process
 
 <img width="583" height="535" alt="FYP Diagrams-HanLearn activity diagram drawio" src="https://github.com/user-attachments/assets/b46ebd25-5bf3-4e13-a283-454742e3ef09" />
+
 > This flowchart shows user actions for each feature after login
 
 ## k) References
