@@ -8,7 +8,7 @@
 *   Nur Ain Binti Mohamadd Hisham - 2216894
 
 ## b) Project Title
-**HanLearn**
+**HanLearn - Smart Mandarin Learning App**
 
 ## c) Introduction
 *   **Problem & Motivation:** Learning Mandarin Chinese is notoriously challenging for beginners due to its logographic writing system (Hanzi) and tonal pronunciation. Many existing learning resources are either too academic or lack engagement. There is a need for a streamlined, mobile-first solution that makes acquiring basic vocabulary and testing knowledge accessible and less intimidating.  
