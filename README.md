@@ -109,6 +109,7 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 4.  **Termination:** User logs out -> Session cleared -> Return to Login.
 
 <img width="393" height="388" alt="FYP Diagrams-HanLearn registration activity diagram drawio" src="https://github.com/user-attachments/assets/088f7ef6-c58e-43b5-ba04-678018d3ba91" />
+
 > This flowchart shows the user signup and login process
 
 <img width="583" height="535" alt="FYP Diagrams-HanLearn activity diagram drawio" src="https://github.com/user-attachments/assets/b46ebd25-5bf3-4e13-a283-454742e3ef09" />
