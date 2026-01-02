@@ -1,5 +1,0 @@
-package com.demureous.hanlearn
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity : FlutterActivity()
