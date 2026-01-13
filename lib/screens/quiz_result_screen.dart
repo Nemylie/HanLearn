@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/quiz_model.dart';
 import 'home_screen.dart'; // For navigation back to home
+import 'quiz_screen.dart';
 
 class QuizResultScreen extends StatelessWidget {
   final int score;
