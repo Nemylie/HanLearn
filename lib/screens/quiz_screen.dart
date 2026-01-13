@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quiz_provider.dart';
 import '../providers/vocabulary_provider.dart';
-import '../providers/auth_provider.dart';
 import 'quiz_result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -62,6 +61,23 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _navigateToResult() {
+    final quizProvider = Provider.of<QuizProvider>(context, listen: false);
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => QuizResultScreen(
+          score: quizProvider.currentScore,
+          totalQuestions: quizProvider.questions.length,
+          questions: quizProvider.questions,
+          userAnswers: _userAnswers,
+          onRetake: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const QuizScreen()),
+            );
+          },
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
