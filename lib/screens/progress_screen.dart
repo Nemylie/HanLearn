@@ -53,7 +53,7 @@ class ProgressScreen extends StatelessWidget {
                     ),
                     Text(
                       user.email,
-                      style: TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.9)),
+                      style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.9)),
                     ),
                   ],
                 ),
@@ -124,7 +124,7 @@ class ProgressScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
-                    childAspectRatio: 1.3,
+                    childAspectRatio: 1.1,
                     children: [
                       _buildStatItem(
                         context, 
@@ -186,7 +186,7 @@ class ProgressScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, size: 24, color: color),
