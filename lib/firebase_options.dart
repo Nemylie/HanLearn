@@ -7,39 +7,27 @@ import 'package:flutter/foundation.dart'
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
-/// ```dart
+/// dart
 /// import 'firebase_options.dart';
 /// // ...
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
-/// ```
+/// 
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -59,4 +47,43 @@ class DefaultFirebaseOptions {
     projectId: 'hanlearn-37143',
     storageBucket: 'hanlearn-37143.firebasestorage.app',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCon5I8qOxmzL21RmV2BGdisj7CZDanxuk',
+    appId: '1:37050357438:web:45e999b5e34a99c25630ef',
+    messagingSenderId: '37050357438',
+    projectId: 'hanlearn-37143',
+    authDomain: 'hanlearn-37143.firebaseapp.com',
+    storageBucket: 'hanlearn-37143.firebasestorage.app',
+    measurementId: 'G-21WP0ZCZPJ',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCon5I8qOxmzL21RmV2BGdisj7CZDanxuk',
+    appId: '1:37050357438:web:73cfe0a8e1b7617c5630ef',
+    messagingSenderId: '37050357438',
+    projectId: 'hanlearn-37143',
+    authDomain: 'hanlearn-37143.firebaseapp.com',
+    storageBucket: 'hanlearn-37143.firebasestorage.app',
+    measurementId: 'G-Z1QMYN10M8',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDOvO2vuz_4Acp77WsgcAM_s2Eqa7FSvIw',
+    appId: '1:37050357438:ios:c62b0c6226f6c6865630ef',
+    messagingSenderId: '37050357438',
+    projectId: 'hanlearn-37143',
+    storageBucket: 'hanlearn-37143.firebasestorage.app',
+    iosBundleId: 'com.example.hanlearn',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDOvO2vuz_4Acp77WsgcAM_s2Eqa7FSvIw',
+    appId: '1:37050357438:ios:c62b0c6226f6c6865630ef',
+    messagingSenderId: '37050357438',
+    projectId: 'hanlearn-37143',
+    storageBucket: 'hanlearn-37143.firebasestorage.app',
+    iosBundleId: 'com.example.hanlearn',
+  );
+
 }

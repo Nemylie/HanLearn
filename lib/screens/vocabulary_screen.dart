@@ -15,11 +15,17 @@ class VocabularyScreen extends StatefulWidget {
 
 class _VocabularyScreenState extends State<VocabularyScreen>
     with SingleTickerProviderStateMixin {
+class _VocabularyScreenState extends State<VocabularyScreen>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
 
   final TextEditingController _translationController = TextEditingController();
   Map<String, String>? _translationResult;
   bool _isTranslating = false;
+
+  // ✅ Filter state
+  String _selectedCategory = 'All';
 
   @override
   void initState() {
@@ -36,8 +42,16 @@ class _VocabularyScreenState extends State<VocabularyScreen>
   }
 
   @override
+  void dispose() {
+    _tabController.dispose();
+    _translationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
 
     return Scaffold(
       appBar: AppBar(
@@ -244,7 +258,9 @@ class _VocabularyScreenState extends State<VocabularyScreen>
                   Text(
                     'English to Mandarin',
                     style: TextStyle(
-                      color: theme.colorScheme.primary,
+                      color: theme.brightness == Brightness.dark
+                          ? Colors.white
+                          : theme.colorScheme.primary,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),

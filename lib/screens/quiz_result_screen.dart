@@ -119,14 +119,21 @@ class QuizResultScreen extends StatelessWidget {
             // Summary Section
             Row(
               children: [
-                Icon(Icons.summarize, color: theme.colorScheme.primary),
+                // Icon(Icons.summarize, color: theme.colorScheme.primary),
+                Icon(Icons.summarize,
+                    color: theme.brightness == Brightness.dark
+                        ? Colors.white
+                        : theme.colorScheme.primary),
                 const SizedBox(width: 8),
                 Text(
                   'Quiz Summary',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.primary,
+                    // color: theme.colorScheme.primary,
+                    color: theme.brightness == Brightness.dark
+                        ? Colors.white
+                        : theme.colorScheme.primary,
                   ),
                 ),
               ],
@@ -187,9 +194,16 @@ class QuizResultScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               question.question,
-                              style: const TextStyle(
+                              // style: const TextStyle(
+                              //   fontSize: 16,
+                              //   fontWeight: FontWeight.bold,
+                              // ),
+                              style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
+                                color: theme.brightness == Brightness.dark
+                                    ? theme.colorScheme.primary // bright maroon
+                                    : Colors.black87,
                               ),
                             ),
                           ),
