@@ -8,7 +8,7 @@ class ProgressScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<AuthProvider>(context).userModel;
+    final user = Provider.of<AppAuthProvider>(context).userModel;
     final theme = Theme.of(context);
 
     if (user == null) {

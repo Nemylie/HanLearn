@@ -17,6 +17,7 @@ dependencies:
   lpinyin: ^2.0.3
   percent_indicator: ^4.2.5
   shared_preferences: ^2.5.4
+  google_sign_in: ^7.2.0
 
 flutter:
   uses-material-design: true

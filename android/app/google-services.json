@@ -1,29 +1,54 @@
-{ 
-   "project_info": { 
-     "project_number": "37050357438", 
-     "project_id": "hanlearn-37143", 
-     "storage_bucket": "hanlearn-37143.firebasestorage.app" 
-   }, 
-   "client": [ 
-     { 
-       "client_info": { 
-         "mobilesdk_app_id": "1:37050357438:android:63b6cc13dc5d723a5630ef", 
-         "android_client_info": { 
-           "package_name": "com.demureous.hanlearn" 
-         } 
-       }, 
-       "oauth_client": [], 
-       "api_key": [ 
-         { 
-           "current_key": "AIzaSyABBGr7GOoShp_zDZ4jWu8cAsK5bCU6gDc" 
-         } 
-       ], 
-       "services": { 
-         "appinvite_service": { 
-           "other_platform_oauth_client": [] 
-         } 
-       } 
-     } 
-   ], 
-   "configuration_version": "1" 
- } 
+{
+  "project_info": {
+    "project_number": "37050357438",
+    "project_id": "hanlearn-37143",
+    "storage_bucket": "hanlearn-37143.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37050357438:android:63b6cc13dc5d723a5630ef",
+        "android_client_info": {
+          "package_name": "com.demureous.hanlearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37050357438-lfr1m0qdgk5eoc135ka3h3cr130kfcps.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.demureous.hanlearn",
+            "certificate_hash": "ee042e540a8507afdde9d76c4b5b8f50c38c0634"
+          }
+        },
+        {
+          "client_id": "37050357438-n3eqt772v6e98c1jpb58kgavhig0hd8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABBGr7GOoShp_zDZ4jWu8cAsK5bCU6gDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37050357438-n3eqt772v6e98c1jpb58kgavhig0hd8j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "37050357438-8dflavmn47lguo3lc3maacb6gupb1n7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hanlearn"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

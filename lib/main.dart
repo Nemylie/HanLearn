@@ -29,7 +29,7 @@ class HanLearnApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => AppAuthProvider()),
         ChangeNotifierProvider(create: (_) => VocabularyProvider()),
         ChangeNotifierProvider(create: (_) => QuizProvider()),
       ],
@@ -113,7 +113,7 @@ class AuthWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Provider.of<AuthProvider>(context);
+    final auth = Provider.of<AppAuthProvider>(context);
     
     if (auth.isAuthenticated) {
       return const HomeScreen();
