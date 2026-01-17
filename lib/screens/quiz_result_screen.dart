@@ -22,7 +22,8 @@ class QuizResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final percentage = score / (totalQuestions * 10); // Assuming 10 points per question
+    final percentage =
+        score / (totalQuestions * 10); // Assuming 10 points per question
 
     String titleText;
     String imagePath;
@@ -95,7 +96,8 @@ class QuizResultScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 12),
                     decoration: BoxDecoration(
                       color: theme.colorScheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(50),
@@ -113,7 +115,7 @@ class QuizResultScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            
+
             // Summary Section
             Row(
               children: [
@@ -130,7 +132,7 @@ class QuizResultScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            
+
             // Questions List
             ListView.separated(
               shrinkWrap: true,
@@ -141,14 +143,16 @@ class QuizResultScreen extends StatelessWidget {
                 final question = questions[index];
                 final userAnswerIndex = userAnswers[index];
                 final isCorrect = userAnswerIndex == question.correctIndex;
-                
+
                 return Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: isCorrect ? Colors.green.withValues(alpha: 0.5) : Colors.red.withValues(alpha: 0.5),
+                      color: isCorrect
+                          ? Colors.green.withValues(alpha: 0.5)
+                          : Colors.red.withValues(alpha: 0.5),
                       width: 2,
                     ),
                     boxShadow: [
@@ -168,7 +172,9 @@ class QuizResultScreen extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: isCorrect ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
+                              color: isCorrect
+                                  ? Colors.green.withValues(alpha: 0.1)
+                                  : Colors.red.withValues(alpha: 0.1),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
@@ -192,20 +198,18 @@ class QuizResultScreen extends StatelessWidget {
                       const SizedBox(height: 12),
                       // Your Answer
                       _buildAnswerRow(
-                        context, 
-                        'Your Answer:', 
-                        question.options[userAnswerIndex], 
-                        isCorrect ? Colors.green : Colors.red
-                      ),
+                          context,
+                          'Your Answer:',
+                          question.options[userAnswerIndex],
+                          isCorrect ? Colors.green : Colors.red),
                       if (!isCorrect) ...[
                         const SizedBox(height: 4),
                         // Correct Answer (only if wrong)
                         _buildAnswerRow(
-                          context, 
-                          'Correct Answer:', 
-                          question.options[question.correctIndex], 
-                          Colors.green
-                        ),
+                            context,
+                            'Correct Answer:',
+                            question.options[question.correctIndex],
+                            Colors.green),
                       ],
                     ],
                   ),
@@ -213,7 +217,7 @@ class QuizResultScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 32),
-            
+
             // Action Buttons
             Row(
               children: [
@@ -221,19 +225,21 @@ class QuizResultScreen extends StatelessWidget {
                   child: OutlinedButton(
                     onPressed: () {
                       Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (context) => const HomeScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
                         (route) => false,
                       );
                     },
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       side: BorderSide(color: theme.colorScheme.primary),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
                     ),
                     child: Text(
                       'Home',
                       style: TextStyle(
-                        fontSize: 16, 
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: theme.colorScheme.primary,
                       ),
@@ -245,19 +251,21 @@ class QuizResultScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => const QuizScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const QuizScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: theme.colorScheme.primary,
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
                       elevation: 4,
                     ),
                     child: const Text(
                       'Retake',
                       style: TextStyle(
-                        fontSize: 16, 
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -273,7 +281,8 @@ class QuizResultScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAnswerRow(BuildContext context, String label, String text, Color color) {
+  Widget _buildAnswerRow(
+      BuildContext context, String label, String text, Color color) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
