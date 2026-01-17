@@ -33,8 +33,9 @@ class ProgressScreen extends StatelessWidget {
             ClipPath(
               clipper: _ProgressHeaderClipper(),
               child: Container(
-                padding: const EdgeInsets.only(top: 100, bottom: 40, left: 20, right: 20),
-                color: theme.primaryColor,
+                padding: const EdgeInsets.only(
+                    top: 100, bottom: 40, left: 20, right: 20),
+                color: theme.colorScheme.primary,
                 width: double.infinity,
                 child: Column(
                   children: [
@@ -42,24 +43,34 @@ class ProgressScreen extends StatelessWidget {
                       radius: 40,
                       backgroundColor: Colors.white,
                       child: Text(
-                        user.displayName.isNotEmpty ? user.displayName[0].toUpperCase() : '?',
-                        style: TextStyle(fontSize: 32, color: theme.primaryColor, fontWeight: FontWeight.bold),
+                        user.displayName.isNotEmpty
+                            ? user.displayName[0].toUpperCase()
+                            : '?',
+                        style: TextStyle(
+                            fontSize: 32,
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     const SizedBox(height: 16),
                     Text(
                       user.displayName,
-                      style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                      style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     Text(
                       user.email,
-                      style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.9)),
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white.withValues(alpha: 0.9)),
                     ),
                   ],
                 ),
               ),
             ),
-            
+
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -68,7 +79,8 @@ class ProgressScreen extends StatelessWidget {
                   // Level Progress Card
                   Card(
                     elevation: 4,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
                     surfaceTintColor: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -77,16 +89,22 @@ class ProgressScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Level ${user.level}', 
-                                style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                              Text('Level ${user.level}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold)),
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 6),
                                 decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  color:
+                                      theme.primaryColor.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                child: Text(_getRankName(user.level), 
-                                  style: TextStyle(color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                child: Text(_getRankName(user.level),
+                                    style: TextStyle(
+                                        color: theme.primaryColor,
+                                        fontWeight: FontWeight.bold)),
                               ),
                             ],
                           ),
@@ -96,7 +114,10 @@ class ProgressScreen extends StatelessWidget {
                             percent: (user.totalScore % 100) / 100,
                             center: Text(
                               "${user.totalScore % 100} / 100 XP",
-                              style: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.white),
+                              style: const TextStyle(
+                                  fontSize: 12.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
                             barRadius: const Radius.circular(15),
                             progressColor: theme.primaryColor,
@@ -112,11 +133,13 @@ class ProgressScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
-                  const Text('Statistics', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  const Text('Statistics',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 16),
-                  
+
                   // Stats Grid
                   GridView.count(
                     shrinkWrap: true,
@@ -127,33 +150,21 @@ class ProgressScreen extends StatelessWidget {
                     childAspectRatio: 1.1,
                     children: [
                       _buildStatItem(
-                        context, 
-                        'Total Score', 
-                        '${user.totalScore}', 
-                        Icons.emoji_events, 
-                        Colors.amber
-                      ),
+                          context,
+                          'Total Score',
+                          '${user.totalScore}',
+                          Icons.emoji_events,
+                          Colors.amber),
+                      _buildStatItem(context, 'Words Learned',
+                          '${user.wordsLearned}', Icons.school, Colors.blue),
+                      _buildStatItem(context, 'Current Level', '${user.level}',
+                          Icons.star, Colors.purple),
                       _buildStatItem(
-                        context, 
-                        'Words Learned', 
-                        '${user.wordsLearned}', 
-                        Icons.school, 
-                        Colors.blue
-                      ),
-                      _buildStatItem(
-                        context, 
-                        'Current Level', 
-                        '${user.level}', 
-                        Icons.star, 
-                        Colors.purple
-                      ),
-                      _buildStatItem(
-                        context, 
-                        'Next Goal', 
-                        '${(user.level + 1) * 100} XP', 
-                        Icons.flag, 
-                        Colors.red
-                      ),
+                          context,
+                          'Next Goal',
+                          '${(user.level + 1) * 100} XP',
+                          Icons.flag,
+                          Colors.red),
                     ],
                   ),
                 ],
@@ -173,7 +184,8 @@ class ProgressScreen extends StatelessWidget {
     return 'Legend';
   }
 
-  Widget _buildStatItem(BuildContext context, String title, String value, IconData icon, Color color) {
+  Widget _buildStatItem(BuildContext context, String title, String value,
+      IconData icon, Color color) {
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

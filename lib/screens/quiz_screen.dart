@@ -16,12 +16,13 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _answered = false;
   int? _selectedOptionIndex;
   final List<int> _userAnswers = [];
-  
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final vocabProvider = Provider.of<VocabularyProvider>(context, listen: false);
+      final vocabProvider =
+          Provider.of<VocabularyProvider>(context, listen: false);
       final quizProvider = Provider.of<QuizProvider>(context, listen: false);
       if (vocabProvider.words.isEmpty) {
         vocabProvider.fetchWords().then((_) {
@@ -35,7 +36,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void _handleAnswer(int selectedIndex, int correctIndex) {
     if (_answered) return;
-    
+
     setState(() {
       _answered = true;
       _selectedOptionIndex = selectedIndex;
@@ -110,23 +111,39 @@ class _QuizScreenState extends State<QuizScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Question ${_currentIndex + 1} of ${provider.questions.length}',
-                  style: TextStyle(color: Colors.grey[600], fontSize: 16),
+                  // style: TextStyle(color: Colors.grey[600], fontSize: 16),
+                  style: TextStyle(
+                    color: theme.brightness == Brightness.dark
+                        ? Colors.white70
+                        : Colors.grey[600],
+                    fontSize: 16,
+                  ),
+
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
                 Card(
                   elevation: 4,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.all(32),
                     child: Center(
                       child: Text(
                         question.question,
+                        // style: TextStyle(
+                        //   fontSize: 24,
+                        //   fontWeight: FontWeight.bold,
+                        //   color: theme.colorScheme.primary,
+                        // ),
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: theme.colorScheme.primary,
+                          color: theme.brightness == Brightness.dark
+                              ? Colors.white
+                              : theme.colorScheme.primary,
                         ),
+
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -141,7 +158,8 @@ class _QuizScreenState extends State<QuizScreen> {
                       final option = question.options[index];
                       Color btnColor = Colors.white;
                       Color textColor = theme.colorScheme.primary;
-                      BorderSide borderSide = BorderSide(color: theme.colorScheme.primary);
+                      BorderSide borderSide =
+                          BorderSide(color: theme.colorScheme.primary);
 
                       if (_answered) {
                         if (index == question.correctIndex) {
@@ -158,17 +176,20 @@ class _QuizScreenState extends State<QuizScreen> {
                       return SizedBox(
                         height: 60,
                         child: ElevatedButton(
-                          onPressed: () => _handleAnswer(index, question.correctIndex),
+                          onPressed: () =>
+                              _handleAnswer(index, question.correctIndex),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: btnColor,
                             foregroundColor: textColor,
                             elevation: _answered ? 0 : 2,
                             side: borderSide,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12)),
                           ),
                           child: Text(
                             option,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                         ),
                       );
