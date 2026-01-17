@@ -15,17 +15,11 @@ class VocabularyScreen extends StatefulWidget {
 
 class _VocabularyScreenState extends State<VocabularyScreen>
     with SingleTickerProviderStateMixin {
-class _VocabularyScreenState extends State<VocabularyScreen>
-    with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
 
   final TextEditingController _translationController = TextEditingController();
   Map<String, String>? _translationResult;
   bool _isTranslating = false;
-
-  // ✅ Filter state
-  String _selectedCategory = 'All';
 
   @override
   void initState() {
@@ -42,16 +36,8 @@ class _VocabularyScreenState extends State<VocabularyScreen>
   }
 
   @override
-  void dispose() {
-    _tabController.dispose();
-    _translationController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
 
     return Scaffold(
       appBar: AppBar(
@@ -135,10 +121,10 @@ class _VocabularyScreenState extends State<VocabularyScreen>
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.primary.withOpacity(0.10),
+                    color: theme.colorScheme.primary.withValues(alpha: 0.10),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                      color: theme.colorScheme.primary.withOpacity(0.30),
+                      color: theme.colorScheme.primary.withValues(alpha: 0.30),
                     ),
                   ),
                   child: Text(
