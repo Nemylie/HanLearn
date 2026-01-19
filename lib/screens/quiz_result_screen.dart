@@ -72,11 +72,11 @@ class QuizResultScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     imagePath,
-                    height: 120,
-                    width: 120,
+                    height: 170,
+                    width: 170,
                     fit: BoxFit.contain,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 4),
                   Text(
                     titleText,
                     style: TextStyle(
@@ -85,7 +85,7 @@ class QuizResultScreen extends StatelessWidget {
                       color: theme.colorScheme.primary,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 2),
                   Text(
                     message,
                     textAlign: TextAlign.center,
