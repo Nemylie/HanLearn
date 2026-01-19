@@ -5,9 +5,9 @@
 ## a) Group Members & Work Distribution
 | Name | Matric Number | Responsibilities
 | :--- | :--- | :---|
-| * Nurul Nadhirah Binti Zakaria | 2213698 | Translation Page, Quiz Page, Progress Tracking Page, Report |
-| * Azwa Nurnisya Binti Ayub | 2217418 | Vocabulary Bank Page, Database, Report |
-| * Nur Ain Binti Mohamad Hisham | 2216894 | Authentication, Settings Page, Dark Mode, Homescreen, Report |
+| Nurul Nadhirah Binti Zakaria | 2213698 | Translation Page, Quiz Page, Progress Tracking Page, Report |
+| Azwa Nurnisya Binti Ayub | 2217418 | Vocabulary Bank Page, Database, Report |
+| Nur Ain Binti Mohamad Hisham | 2216894 | Authentication, Settings Page, Dark Mode, Report |
 
 ## b) Project Title
 **HanLearn - Smart Mandarin Learning App**
@@ -72,18 +72,6 @@ The application features a modern, clean interface adhering to **Material Design
 
 *   **Quiz Interface:** Focused view with the question at the top, large interactive answer buttons, and a progress bar.
 
-
-## h) Architecture / Technical Design
-*   **Framework:** Flutter (Dart) for cross-platform mobile application development.
-*   **State Management:** **Provider** package is used to manage and propagate state changes (User Auth, Quiz Score, Vocabulary Data) across the widget tree efficiently.
-*   **Backend:**
-    *   **Firebase Authentication:** Handles identity management.
-    *   **Cloud Firestore:** NoSQL database for storing user profiles and learning data.
-*   **External Packages:**
-    *   `translator`: For API-based translation services.
-    *   `lpinyin`: For converting Hanzi characters to Pinyin.
-    *   `shared_preferences`: For local storage of user settings (Remember Me).
-
 ## i) Data Model
 The app uses a NoSQL document-based model in **Cloud Firestore**.
 
@@ -111,10 +99,8 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 }
 ```
 
-## j) Flowchart / User Flow
+## h) Flowchart / User Flow
 1.  **Launch:** App opens. Checks `shared_preferences` for "Remember Me" or existing session.
-
-
 
 2.  **Authentication:**
     *   If not logged in: User lands on **Login Screen** -> Enter credentials -> Validated by Firebase.
@@ -133,16 +119,61 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 
 > This flowchart shows user actions for each feature after login
 
-## k) Final UI Screenshots
+## i) Final UI Screenshots
 
-## l) Summary of Achieved Features
+## j) Summary of Achieved Features
 
-## m) Technical Explanation
+## k) Technical Explanation
 
-## n) Limitations & Future Enhancements
+###Technology Stack
+**1. Framework:** Flutter (Dart) for cross-platform mobile app development.
+**2. Firebase Integration:**
+     - Firebase Authentication: Supports both email/password and google oauth..
+     - Cloud Firestore: NoSQL database for storing user profiles and learning data.
+     - Firestore Rules: Configured to ensure access only for authenticated users.
+**3. State Management:** Provider package is used to manage and propagate state changes (user auth, quiz score, vocabulary data) across the widget tree efficiently.
+**4. External Packages:**
+     - `translator`: For API-based translatioin services.
+     - `Ipinyin`: For converting Hanzi characters to Pinyin.
+     - `shared_preferences`: For local storage of user settings (Remember me).
+**5. Authentication:** Firebase auth with platform-specific providers (email/password, google oauth).
+
+**6. Architecture/Design**
+
+**7. Key Technical Decisions**
+
+## l) Limitations & Future Enhancements
+
+###Limitations
+**1) Forgot Password**
+   - Firebase email reset link requires access to the email inbox.
+   - Email/password accounts: works for real emails that can receive the reset link.
+   - Google sign-in accounts: password management is handled by Google, so reset is not supported within the app.
+   - Dummary emails: reset link can be sent, but the link can't be accessed for the fake email
+  
+**2) Update Email:**
+   - Changes user email in firebase auth and firestore profile.
+   - Firebase requires reauthentication for email changes.
+   - Email/password accounts: supported for real and dummy emails (no email verification needed).
+   - Google sign-in accounts: not supported, as Google manages email, so changing it can cause inconsitent login behaviour
+
+**3) Firestore Storage:**
+   - The firestore spark plan (free) restricts the ability to upload media files.
+  
+###Future Enhancements
+**1) Forgot Password:**
+   - Allow resetting password for Google sign-in accounts using firebase authentication, if Google provides such feature.
+   - Use alternative method for dummy emails users to confirm their identity (for example: using phone number or other form of user verification to ensure the user is legit before allowing them to change their email or password.
+
+**2) Update Email:**
+   - Support email update for Google sign-in accounts without causing login issues, possibly by managing firebase account linking directly.
+   - Implement email verification for dummy email users when updating their email addresses.
+
+**3) Firestore Storage:**
+   - Consider upgrading to a paid firestore plan to unlock more storage capacity for uploading media files.
 
 
-## k) References
+## m) References
 *   **Flutter Documentation:** [https://flutter.dev/docs](https://flutter.dev/docs)
 *   **Firebase Documentation:** [https://firebase.google.com/docs](https://firebase.google.com/docs)
 *   **Provider Package:** [https://pub.dev/packages/provider](https://pub.dev/packages/provider)
