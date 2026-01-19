@@ -125,7 +125,7 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 
 ## k) Technical Explanation
 
-###Technology Stack
+### Technology Stack
 **1. Framework:** Flutter (Dart) for cross-platform mobile app development.
 **2. Firebase Integration:**
      - Firebase Authentication: Supports both email/password and google oauth..
@@ -144,7 +144,7 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 
 ## l) Limitations & Future Enhancements
 
-###Limitations
+### Limitations
 **1) Forgot Password**
    - Firebase email reset link requires access to the email inbox.
    - Email/password accounts: works for real emails that can receive the reset link.
@@ -160,7 +160,7 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 **3) Firestore Storage:**
    - The firestore spark plan (free) restricts the ability to upload media files.
   
-###Future Enhancements
+### Future Enhancements
 **1) Forgot Password:**
    - Allow resetting password for Google sign-in accounts using firebase authentication, if Google provides such feature.
    - Use alternative method for dummy emails users to confirm their identity (for example: using phone number or other form of user verification to ensure the user is legit before allowing them to change their email or password.
