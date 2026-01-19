@@ -2,10 +2,12 @@
 
 <img src="assets/images/HanLearnLogo.png" alt="HanLearn Logo" width="200" />
 
-## a) Group Members
-*   Nurul Nadhirah Binti Zakaria - 2213698
-*   Azwa Nurnisya Binti Ayub - 22174118
-*   Nur Ain Binti Mohamadd Hisham - 2216894
+## a) Group Members & Work Distribution
+| Name | Matric Number | Responsibilities
+| :--- | :--- | :---|
+| * Nurul Nadhirah Binti Zakaria | 2213698 | Translation Page, Quiz Page, Progress Tracking Page, Report |
+| * Azwa Nurnisya Binti Ayub | 2217418 | Vocabulary Bank Page, Database, Report |
+| * Nur Ain Binti Mohamad Hisham | 2216894 | Authentication, Settings Page, Dark Mode, Homescreen, Report |
 
 ## b) Project Title
 **HanLearn - Smart Mandarin Learning App**
@@ -130,6 +132,15 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 <img width="583" height="535" alt="FYP Diagrams-HanLearn activity diagram drawio (1)" src="https://github.com/user-attachments/assets/df69b5ae-052b-4ff1-b7f2-1da7d4b816c1" />
 
 > This flowchart shows user actions for each feature after login
+
+## k) Final UI Screenshots
+
+## l) Summary of Achieved Features
+
+## m) Technical Explanation
+
+## n) Limitations & Future Enhancements
+
 
 ## k) References
 *   **Flutter Documentation:** [https://flutter.dev/docs](https://flutter.dev/docs)
