@@ -5,9 +5,9 @@
 ## a) Group Members & Work Distribution
 | Name | Matric Number | Responsibilities
 | :--- | :--- | :---|
-| Nurul Nadhirah Binti Zakaria | 2213698 | Translation Page, Quiz Page, Progress Tracking Page, Report |
-| Azwa Nurnisya Binti Ayub | 2217418 | Vocabulary Bank Page, Database, Report |
-| Nur Ain Binti Mohamad Hisham | 2216894 | Authentication, Settings Page, Dark Mode, Report |
+| Nurul Nadhirah Binti Zakaria (@Nemylie) | 2213698 | Translation Page, Quiz Page, Progress Tracking Page, Report |
+| Azwa Nurnisya Binti Ayub (@azwanurnisya) | 2217418 | Vocabulary Bank Page, Database, Report |
+| Nur Ain Binti Mohamad Hisham (@nurainhisham) | 2216894 | Authentication, Settings Page, Dark Mode, Report |
 
 ## b) Project Title
 **HanLearn - Smart Mandarin Learning App**
