@@ -124,25 +124,27 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 ## j) Summary of Achieved Features
 
 ## k) Technical Explanation
-**Technology Stack:**
-- **Framework:** Flutter (Dart) for cross-platform mobile app development.
-- **Firebase Integration:**
+
+###Technology Stack
+**1. Framework:** Flutter (Dart) for cross-platform mobile app development.
+**2. Firebase Integration:**
      - Firebase Authentication: Supports both email/password and google oauth..
      - Cloud Firestore: NoSQL database for storing user profiles and learning data.
      - Firestore Rules: Configured to ensure access only for authenticated users.
-- **State Management:** Provider package is used to manage and propagate state changes (user auth, quiz score, vocabulary data) across the widget tree efficiently.
-- **External Packages:**
+**3. State Management:** Provider package is used to manage and propagate state changes (user auth, quiz score, vocabulary data) across the widget tree efficiently.
+**4. External Packages:**
      - `translator`: For API-based translatioin services.
      - `Ipinyin`: For converting Hanzi characters to Pinyin.
      - `shared_preferences`: For local storage of user settings (Remember me).
-- **Authentication:** Firebase auth with platform-specific providers (email/password, google oauth).
+**5. Authentication:** Firebase auth with platform-specific providers (email/password, google oauth).
 
-**Architecture/Design**
+**6. Architecture/Design**
 
-**Key Technical Decisions**
+**7. Key Technical Decisions**
 
 ## l) Limitations & Future Enhancements
-**Limitations:**
+
+###Limitations
 **1) Forgot Password**
    - Firebase email reset link requires access to the email inbox.
    - Email/password accounts: works for real emails that can receive the reset link.
@@ -158,7 +160,7 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 **3) Firestore Storage:**
    - The firestore spark plan (free) restricts the ability to upload media files.
   
-**Future Enhancements:**
+###Future Enhancements
 **1) Forgot Password:**
    - Allow resetting password for Google sign-in accounts using firebase authentication, if Google provides such feature.
    - Use alternative method for dummy emails users to confirm their identity (for example: using phone number or other form of user verification to ensure the user is legit before allowing them to change their email or password.
