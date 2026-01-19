@@ -120,8 +120,9 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                       prefixIcon: Icon(Icons.lock_outline),
                     ),
                     validator: (v) {
-                      if ((v ?? '').trim().isEmpty)
+                      if ((v ?? '').trim().isEmpty) {
                         return 'Enter your password';
+                      }
                       return null;
                     },
                   ),

@@ -15,12 +15,12 @@ class PrivacyPolicyScreen extends StatelessWidget {
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
+          child: const Padding(
+            padding: EdgeInsets.all(16),
             child: Text(
               'Privacy Policy (placeholder)\n\n'
               'You can paste your real policy text here later.',
-              style: const TextStyle(fontSize: 16, height: 1.5),
+              style: TextStyle(fontSize: 16, height: 1.5),
             ),
           ),
         ),

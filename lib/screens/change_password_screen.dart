@@ -98,8 +98,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       prefixIcon: Icon(Icons.lock_outline),
                     ),
                     validator: (v) {
-                      if ((v ?? '').trim().isEmpty)
+                      if ((v ?? '').trim().isEmpty) {
                         return 'Enter current password';
+                      }
                       return null;
                     },
                   ),
@@ -128,8 +129,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     ),
                     validator: (v) {
                       final value = (v ?? '').trim();
-                      if (value != _newPassword.text.trim())
+                      if (value != _newPassword.text.trim()) {
                         return 'Passwords do not match';
+                      }
                       return null;
                     },
                   ),

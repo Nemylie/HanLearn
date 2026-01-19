@@ -10,10 +10,14 @@ class QuizProvider extends ChangeNotifier {
   int _currentScore = 0;
   int get currentScore => _currentScore;
 
-  void generateQuiz(List<WordModel> words) {
+  void generateQuiz(List<WordModel> allWords) {
     _questions = [];
     _currentScore = 0;
-    if (words.isEmpty) return;
+
+    // Filter only default words for the quiz as per requirements
+    final words = allWords.where((w) => w.isDefault).toList();
+
+    if (words.length < 4) return; // Need at least 4 words for options
 
     final random = Random();
     // Generate 5 questions
@@ -22,11 +26,13 @@ class QuizProvider extends ChangeNotifier {
       List<String> options = [];
       options.add(target.meaning);
       
-      while (options.length < 4) {
+      int attempts = 0;
+      while (options.length < 4 && attempts < 100) {
         String option = words[random.nextInt(words.length)].meaning;
         if (!options.contains(option)) {
           options.add(option);
         }
+        attempts++;
       }
       options.shuffle();
 

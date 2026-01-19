@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // New screens
 import 'update_email_screen.dart';
@@ -8,6 +9,7 @@ import 'about_us_screen.dart';
 import 'privacy_policy_screen.dart';
 import 'terms_conditions_screen.dart';
 import 'update_display_name_screen.dart';
+import '../providers/theme_provider.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -22,10 +24,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDark;
 
     final Color bg = theme.scaffoldBackgroundColor;
-    final Color cardBg = isDark ? const Color(0xFF1F1F22) : Colors.white;
+    final Color cardBg = isDark ? const Color(0xFF2A2A2E) : Colors.white;
     final Color divider = isDark ? Colors.white12 : Colors.black12;
     final Color titleColor = isDark ? Colors.white : Colors.black87;
     final Color subtitleColor = isDark ? Colors.white70 : Colors.black54;
@@ -104,14 +107,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         children: [
                           const SizedBox(height: 18),
 
-                          // SECURITY
-                          // SECURITY
-                          _SectionHeader(title: 'Security', color: titleColor),
-
                           _NavTile(
                             icon: Icons.person_outline,
                             iconColor: isDark ? Colors.white70 : headerColor,
-                            title: 'Change Display Name',
+                            title: 'Change Appearance',
                             titleColor: titleColor,
                             subtitle: null,
                             subtitleColor: subtitleColor,
@@ -162,9 +161,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                           _NavTile(
                             icon: Icons.delete_outline,
-                            iconColor: Colors.redAccent,
+                            iconColor: isDark ? Colors.redAccent : Colors.red,
                             title: 'Delete Account',
-                            titleColor: Colors.redAccent,
+                            titleColor: isDark ? Colors.redAccent : Colors.red,
                             subtitle: null,
                             subtitleColor: subtitleColor,
                             trailingColor:
@@ -180,8 +179,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           _Divider(color: divider),
                           const SizedBox(height: 12),
 
-                          // GENERAL
                           _SectionHeader(title: 'General', color: titleColor),
+                          _SwitchTile(
+                            icon: Icons.dark_mode,
+                            iconColor: isDark ? Colors.white70 : headerColor,
+                            title: 'Dark Mode',
+                            subtitle: 'Use dark theme throughout the app',
+                            value: themeProvider.isDark,
+                            titleColor: titleColor,
+                            subtitleColor: subtitleColor,
+                            onChanged: (_) => themeProvider.toggleTheme(),
+                          ),
                           _SwitchTile(
                             icon: Icons.notifications_none,
                             iconColor: isDark ? Colors.white70 : headerColor,
@@ -422,7 +430,7 @@ class _SwitchTile extends StatelessWidget {
           ),
           Switch(
             value: value,
-            activeColor: theme.colorScheme.secondary,
+            activeThumbColor: theme.colorScheme.secondary,
             onChanged: onChanged, // toggle only
           ),
         ],

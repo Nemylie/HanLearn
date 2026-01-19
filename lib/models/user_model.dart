@@ -2,6 +2,7 @@ class UserModel {
   final String uid;
   final String email;
   final String displayName;
+  final String? photoUrl;
   final int level;
   final int totalScore;
   final int wordsLearned;
@@ -10,6 +11,7 @@ class UserModel {
     required this.uid,
     required this.email,
     required this.displayName,
+    this.photoUrl,
     this.level = 1,
     this.totalScore = 0,
     this.wordsLearned = 0,
@@ -20,6 +22,7 @@ class UserModel {
       'uid': uid,
       'email': email,
       'displayName': displayName,
+      'photoUrl': photoUrl,
       'level': level,
       'totalScore': totalScore,
       'wordsLearned': wordsLearned,
@@ -31,6 +34,7 @@ class UserModel {
       uid: map['uid'] ?? '',
       email: map['email'] ?? '',
       displayName: map['displayName'] ?? '',
+      photoUrl: map['photoUrl'] as String?,
       level: map['level']?.toInt() ?? 1,
       totalScore: map['totalScore']?.toInt() ?? 0,
       wordsLearned: map['wordsLearned']?.toInt() ?? 0,

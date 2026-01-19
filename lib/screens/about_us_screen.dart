@@ -15,12 +15,12 @@ class AboutUsScreen extends StatelessWidget {
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
+          child: const Padding(
+            padding: EdgeInsets.all(16),
             child: Text(
               'HanLearn is a Mandarin learning app.\n\n'
               'This page is a placeholder. You can replace this text later.',
-              style: const TextStyle(fontSize: 16, height: 1.5),
+              style: TextStyle(fontSize: 16, height: 1.5),
             ),
           ),
         ),
