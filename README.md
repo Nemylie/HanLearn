@@ -7,7 +7,7 @@
 | :--- | :--- | :---|
 | Nurul Nadhirah Binti Zakaria | 2213698 | Translation Page, Quiz Page, Progress Tracking Page, Report |
 | Azwa Nurnisya Binti Ayub | 2217418 | Vocabulary Bank Page, Database, Report |
-| Nur Ain Binti Mohamad Hisham | 2216894 | Authentication, Settings Page, Dark Mode, Homescreen, Report |
+| Nur Ain Binti Mohamad Hisham | 2216894 | Authentication, Settings Page, Dark Mode, Report |
 
 ## b) Project Title
 **HanLearn - Smart Mandarin Learning App**
