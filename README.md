@@ -121,6 +121,51 @@ The app uses a NoSQL document-based model in **Cloud Firestore**.
 
 ## i) Final UI Screenshots
 
+### 1. Authentication
+**Login Screen:** Secure entry point with email/password and Google Sign-In options.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/LoginLight.png" width="200" /> | <img src="assets/screenshots/LoginDark.png" width="200" /> |
+
+**Register Screen:** Simple account creation form with validation.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/RegisterLight.png" width="200" /> | <img src="assets/screenshots/RegisterDark.png" width="200" /> |
+
+### 2. Main Dashboard
+**Home Screen:** Central hub showing user progress, fun facts, and navigation to key modules.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/HomeLight.png" width="200" /> | <img src="assets/screenshots/HomeDark.png" width="200" /> |
+
+### 3. Learning Modules
+**Vocabulary Bank:** Categorized word lists with expandable details (Hanzi, Pinyin, Meaning).
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/VocabLight.png" width="200" /> | <img src="assets/screenshots/VocabDark.png" width="200" /> |
+
+**Translation:** Bidirectional translation tool with example sentences.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/TranslateLight.png" width="200" /> | <img src="assets/screenshots/TranslateDark.png" width="200" /> |
+
+### 4. Assessment & Tracking
+**Quiz Interface:** Interactive questions to test vocabulary retention.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/QuizLight.png" width="200" /> | <img src="assets/screenshots/QuizDark.png" width="200" /> |
+
+**Progress Tracker:** Visual stats showing level, XP, and learning milestones.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/ProgressLight.png" width="200" /> | <img src="assets/screenshots/ProgressDark.png" width="200" /> |
+
+### 5. Settings
+**Settings Page:** Customization options for theme (Dark/Light), account management, and app info.
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="assets/screenshots/SettingLight.png" width="200" /> | <img src="assets/screenshots/SettingDark.png" width="200" /> |
+
 ## j) Summary of Achieved Features
 
 ## k) Technical Explanation
