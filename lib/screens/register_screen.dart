@@ -190,7 +190,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: size.height * 0.37, left: 24, right: 24),
+                      top: size.height * 0.40, left: 24, right: 24),
                   child: Card(
                     elevation: 8,
                     shape: RoundedRectangleBorder(
