@@ -6,7 +6,8 @@ class UserModel {
   final int level;
   final int totalScore;
   final int wordsLearned;
-
+//This model represents the User Profile and their Learning Progress . It is used to store and retrieve user data from Firestore.
+//keep track sape yg login, display user progress, etc
   UserModel({
     required this.uid,
     required this.email,
@@ -17,6 +18,8 @@ class UserModel {
     this.wordsLearned = 0,
   });
 
+
+//toMap store, fromMap retrieve from firestore
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,

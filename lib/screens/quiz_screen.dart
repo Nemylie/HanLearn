@@ -9,52 +9,52 @@ class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
 
   @override
-  State<QuizScreen> createState() => _QuizScreenState();
+  State<QuizScreen> createState() => _QuizScreenState(); //create state
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  int _currentIndex = 0;
-  bool _answered = false;
+  int _currentIndex = 0; //current question index
+  bool _answered = false; 
   int? _selectedOptionIndex;
   final List<int> _userAnswers = [];
 
   @override
-  void initState() {
+  void initState() { //init state dari line 22-36)
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final vocabProvider =
-          Provider.of<VocabularyProvider>(context, listen: false);
-      final quizProvider = Provider.of<QuizProvider>(context, listen: false);
-      if (vocabProvider.words.isEmpty) {
+      final vocabProvider =   
+          Provider.of<VocabularyProvider>(context, listen: false);    //get vocab provider
+      final quizProvider = Provider.of<QuizProvider>(context, listen: false); //get quiz provider
+      if (vocabProvider.words.isEmpty) { //fetch vocab if not loaded
         vocabProvider.fetchWords().then((_) {
-          quizProvider.generateQuiz(vocabProvider.words);
+          quizProvider.generateQuiz(vocabProvider.words); //generate quiz after vocab loaded
         });
       } else {
-        quizProvider.generateQuiz(vocabProvider.words);
+        quizProvider.generateQuiz(vocabProvider.words); //if loaded, trigger generate quiz to create fresh set of questions
       }
     });
   }
 
   void _handleAnswer(int selectedIndex, int correctIndex) {
-    if (_answered) return;
+    if (_answered) return;  //if already answered, do nothing
 
     setState(() {
-      _answered = true;
-      _selectedOptionIndex = selectedIndex;
-      _userAnswers.add(selectedIndex);
+      _answered = true; //set answered to true
+      _selectedOptionIndex = selectedIndex; //set selected option index
+      _userAnswers.add(selectedIndex); //add selected index to user answers (randomized)
     });
 
     final quizProvider = Provider.of<QuizProvider>(context, listen: false);
     bool isCorrect = selectedIndex == correctIndex;
-    quizProvider.updateScore(isCorrect);
+    quizProvider.updateScore(isCorrect); //if correct, update score
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () { //after answer
       if (!mounted) return;
       if (_currentIndex < quizProvider.questions.length - 1) {
         setState(() {
-          _currentIndex++;
-          _answered = false;
-          _selectedOptionIndex = null;
+          _currentIndex++; //move to next question
+          _answered = false; //reset answered
+          _selectedOptionIndex = null; //reset selected option index
         });
       } else {
         _navigateToResult();
@@ -63,24 +63,24 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _navigateToResult() {
-    final quizProvider = Provider.of<QuizProvider>(context, listen: false);
+    final quizProvider = Provider.of<QuizProvider>(context, listen: false); //get quiz provider
     
     // Update user progress
-    final authProvider = Provider.of<AppAuthProvider>(context, listen: false);
-    final score = quizProvider.currentScore;
+    final authProvider = Provider.of<AppAuthProvider>(context, listen: false); //get auth provider
+    final score = quizProvider.currentScore; //get current score
     final wordsLearned = score ~/ 10; // Assuming 1 word per correct answer (10 pts)
-    authProvider.updateProgress(score, wordsLearned);
+    authProvider.updateProgress(score, wordsLearned); //update progress
 
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => QuizResultScreen(
-          score: quizProvider.currentScore,
-          totalQuestions: quizProvider.questions.length,
-          questions: quizProvider.questions,
-          userAnswers: _userAnswers,
-          onRetake: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const QuizScreen()),
+    Navigator.of(context).pushReplacement( //navigate to result screen
+      MaterialPageRoute( 
+        builder: (context) => QuizResultScreen( 
+          score: quizProvider.currentScore, //get current score
+          totalQuestions: quizProvider.questions.length, //get total questions
+          questions: quizProvider.questions, //get questions
+          userAnswers: _userAnswers,  //get user answers
+          onRetake: () {  //if nak retake quiz
+            Navigator.of(context).pushReplacement( //navigate terus quiz screen
+              MaterialPageRoute(builder: (context) => const QuizScreen()), //replace with quiz screen
             );
           },
         ),
@@ -129,7 +129,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const SizedBox(height: 10),
-                      LinearProgressIndicator(
+                      LinearProgressIndicator( //show user progress in quiz
                         value: progress,
                         backgroundColor: Colors.white24,
                         color: Colors.white,
@@ -208,7 +208,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: btnColor,
                                   foregroundColor: textColor,
-                                  elevation: _answered ? 0 : 2,
+                                  elevation: _answered ? 0 : 2, //no elevation if answered
                                   side: borderSide,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12)),

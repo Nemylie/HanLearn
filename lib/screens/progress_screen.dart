@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import '../providers/auth_provider.dart';
-
+//user dashboard to track learning journey,
 class ProgressScreen extends StatelessWidget {
   const ProgressScreen({super.key});
 
@@ -61,7 +61,7 @@ class ProgressScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Level ${user.level}!',
+                    'Level ${user.level}!', //retrieve THAT user level
                     style: const TextStyle(
                       fontSize: 48,
                       fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class ProgressScreen extends StatelessWidget {
                         ),
                       ],
                       image: DecorationImage(
-                        image: AssetImage(_getLevelImagePath(user.level)),
+                        image: AssetImage(_getLevelImagePath(user.level)), //show diff icon based on level
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -137,7 +137,7 @@ class ProgressScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Text('XP Progress', style: TextStyle(fontWeight: FontWeight.bold)),
-                                Text('${user.totalScore % 100} / 100 XP',
+                                Text('${user.totalScore % 100} / 100 XP', //??/100xp
                                     style: TextStyle(
                                         color: theme.brightness == Brightness.dark
                                             ? Colors.white
@@ -157,7 +157,7 @@ class ProgressScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              '${100 - (user.totalScore % 100)} XP to next level',
+                              '${100 - (user.totalScore % 100)} XP to next level', //xp left to upgrade
                               style: TextStyle(
                                   color: theme.brightness == Brightness.dark
                                       ? Colors.white70
@@ -214,17 +214,17 @@ class ProgressScreen extends StatelessWidget {
                         _buildStatItem(
                             context,
                             'Total Score',
-                            '${user.totalScore}',
+                            '${user.totalScore}', //get user total score
                             Icons.emoji_events,
                             Colors.amber),
                         _buildStatItem(context, 'Words Learned',
-                            '${user.wordsLearned}', Icons.school, Colors.blue),
-                        _buildStatItem(context, 'Current Level', '${user.level}',
+                            '${user.wordsLearned}', Icons.school, Colors.blue), //get yser total words learned
+                        _buildStatItem(context, 'Current Level', '${user.level}', //get user level
                             Icons.star, Colors.purple),
                         _buildStatItem(
                             context,
                             'Next Goal',
-                            '${(user.level + 1) * 100} XP',
+                            '${(user.level + 1) * 100} XP', //get next level xp goal
                             Icons.flag,
                             isDark ? theme.colorScheme.primary : Colors.red),
                       ],
@@ -245,7 +245,7 @@ class ProgressScreen extends StatelessWidget {
     if (level == 3) return 'assets/images/Level3.png';
     return 'assets/images/Level4.png';
   }
-
+//5 ranks
   String _getRankName(int level) {
     if (level <= 4) return 'Bronze Scholar';
     if (level <= 9) return 'Silver Master';

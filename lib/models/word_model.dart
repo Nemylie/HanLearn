@@ -5,7 +5,9 @@ class WordModel {
   final String meaning;
   final String category;
   final bool isDefault;
-
+//This model represents a single Vocabulary Word (Chinese character). It is the core data structure for the learning content.
+//separate dri static content dgn user content
+//used in vocab screen dgn quiz provider to display words
   WordModel({
     required this.id,
     required this.character,
