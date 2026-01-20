@@ -181,7 +181,7 @@ The Vocabulary feature enhances the user’s learning experience by offering an 
 Users can add custom words via the Translation module, instantly enriching the word bank with personalized entries. This functionality is seamlessly integrated with Firebase, ensuring that data is consistently synchronized across devices.
 
 ### 3. Translation
-The Translation feature allows users to engage in bidirectional translation between Detected Languange and Mandarin. The app displays both the HanZi (Chinese characters) and Pinyin, making it easier for users to grasp both the written and phonetic forms of the language. Translations also include example sentences to provide context, helping users understand how words are used in real-life situations.Next, the app integrates with Pinyinl API to ensure precise Pinyin generation, while also offering voiceover functionality for correct pronunciation. Users can save translations to their "My Vocabulary" list for quick future reference, and they have copy options to enhance usability.
+The Translation feature allows users to engage in bidirectional translation between Detected Languange and Mandarin. The app displays both the HanZi (Chinese characters) and Pinyin, making it easier for users to grasp both the written and phonetic forms of the language. Translations also include example sentences to provide context, helping users understand how words are used in real-life situations.Next, the app integrates with lpinyin API to ensure precise Pinyin generation, while also offering voiceover functionality for correct pronunciation. Users can save translations to their "My Vocabulary" list for quick future reference, and they have copy options to enhance usability.
 
 ### 4. Quiz
 The Quiz feature introduces an engaging and interactive learning environment for users. It consists of multiple-choice questions (MCQs) with 5 questions per challenge. Each question is worth 10 points, and a perfect score of 50 points is achievable, providing clear benchmarks for progress. Correct answers are highlighted in green, while incorrect ones are marked in red, helping users easily track their performance. After completing the quiz, users can review their score and correct answers. They can also choose to retake the quiz or return to the home screen. The quiz results are automatically updated to the user's progress stats, providing immediate feedback and motivation.
@@ -218,7 +218,7 @@ c. pubspec.yaml is where we define the dependencies for the packages used, such 
 
 **4. External Packages:**
      - `translator`: For API-based translatioin services.
-     - `Pinyinl`: For converting Hanzi characters to Pinyin.
+     - `lpinyin`: For converting Hanzi characters to Pinyin.
      - `shared_preferences`: For local storage of user settings (Remember me).
 **5. Authentication:** Firebase auth with platform-specific providers (email/password, google oauth).
 
@@ -277,6 +277,15 @@ f. Firebase Authentication: Firebase handles user sign-in and account management
 
 **3) Firestore Storage:**
    - Consider upgrading to a paid firestore plan to unlock more storage capacity for uploading media files.
+
+**4) AI Integration:**
+   - Add AI-powered speech recognition to allow users to practice mandarin pronunciation and receive feedback.
+
+**5) Game Mode:**
+   - Implement a game mode for more engaging and interactive learning experiences. This can include timed challenges or memory-based games.
+
+**6) Quiz Variations:**
+   - Add more quiz variations to diversify the learning experience. This can include multiple-choice questions (MCQ), matching words with images and fill-in-the-blank challenges.
 
 
 ## m) References
